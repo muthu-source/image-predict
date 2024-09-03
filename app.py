@@ -13,8 +13,7 @@ loaded_model_imageNet = load_model("model_resnet50.h5")
 name_class = ['anemic', 'non-anemic']
 
 # Streamlit title and file uploader
-st.title("Anemia Detection with ResNet50")
-
+st.title("Anemia Detection")
 # Upload image via Streamlit
 uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "png"])
 
