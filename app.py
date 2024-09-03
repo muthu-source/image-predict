@@ -1,3 +1,4 @@
+# app.py
 import streamlit as st
 import numpy as np
 import cv2
@@ -15,7 +16,7 @@ name_class = ['anemic', 'non-anemic']
 st.title("Anemia Detection with ResNet50")
 
 # Upload image via Streamlit
-uploaded_file = st.file_uploader("Choose an image...", type="jpg")
+uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "png"])
 
 if uploaded_file is not None:
     # Convert the file to an OpenCV image
@@ -25,8 +26,11 @@ if uploaded_file is not None:
     # Resize the image to the required input size for the model
     img = cv2.resize(img, (100, 100))
     
+    # Convert BGR to RGB for Streamlit display
+    img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+    
     # Display the uploaded image
-    st.image(img, channels="BGR", caption="Uploaded Image", use_column_width=True)
+    st.image(img_rgb, caption="Uploaded Image", use_column_width=True)
     
     # Preprocess the image for the model
     x = np.expand_dims(img, axis=0)
