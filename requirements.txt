@@ -1,8 +1,7 @@
-
 streamlit==1.32.0
-numpy==1.21.6  # Downgrade NumPy for TensorFlow compatibility
+numpy==1.24.4  # Use a newer version that is compatible
 pandas==2.2.2
 matplotlib==3.8.4
-tensorflow==2.11.0  # Downgrade TensorFlow to a more stable version
+tensorflow==2.12.0  # Ensure compatibility with the newer numpy
 opencv-python==4.8.0.74
-Pillow==9.5.0  # Keep Pillow version that avoids build issues
+Pillow==9.5.0
