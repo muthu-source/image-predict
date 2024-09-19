@@ -4,4 +4,5 @@ pandas==2.2.2
 matplotlib==3.8.4
 tensorflow==2.16.2  # Update TensorFlow to a compatible version
 opencv-python==4.8.0.74
-
+Pillow==9.5.0
+sqlite3
