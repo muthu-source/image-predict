@@ -127,6 +127,16 @@ elif choice == "Login":
                 st.error("Invalid username or password")
     
     if st.session_state.logged_in:
+        st.sidebar.header("Upload Instructions")
+        st.sidebar.write("Please upload a palm image for anemia detection.")
+        st.sidebar.write("Please enter the data step-by-step.")
+        st.sidebar.write("Please take the image of your palm under good lighting condition.")
+        st.sidebar.write("Make sure the palm is clearly visible like in this image.")
+       
+       # Display an example image in the sidebar
+        example_image = Image.open("example.png")  # Path to your example image
+        st.sidebar.image(example_image, caption="Example of a palm image", use_column_width=True)
+
         # After login, ask for name, age, and image
         st.subheader("Upload Details for Anemia Prediction")
 
